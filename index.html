@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I love my zombie macs girl</title>
+
+<style>
+:root {
+--black: #09050e;
+--purple: #210b32;
+--violet: #6e28a0;
+--lavender: #d8b4ff;
+--white: #f7edff;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+padding: 24px 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--white);
+background:
+radial-gradient(ellipse at top, #40135c 0%, transparent 55%),
+linear-gradient(145deg, #050308, #180824 55%, #09050e);
+font-family: Georgia, "Times New Roman", serif;
+text-align: center;
+overflow-x: hidden;
+}
+
+body::before {
+content: "✦ ♱ ☾ ♡ ☽ ♱ ✦";
+position: fixed;
+top: 12px;
+left: 0;
+right: 0;
+color: #b77be9;
+opacity: .5;
+letter-spacing: 12px;
+font-size: 18px;
+pointer-events: none;
+}
+
+.card {
+width: 100%;
+max-width: 470px;
+padding: 30px 22px;
+background: rgba(14, 6, 22, .92);
+border: 1px solid #8d55b4;
+outline: 1px solid #4b2266;
+outline-offset: 7px;
+box-shadow: 0 0 35px #6f269a35, inset 0 0 30px #5c207515;
+position: relative;
+}
+
+.symbol {
+font-size: 47px;
+color: var(--lavender);
+text-shadow: 0 0 18px #b55bff;
+margin-bottom: 10px;
+}
+
+h1 {
+font-size: clamp(27px, 7vw, 37px);
+line-height: 1.5;
+color: #e2c0ff;
+text-shadow: 0 0 15px #8f36c6;
+margin: 12px 0;
+}
+
+h2 {
+color: #d6a9ff;
+line-height: 1.8;
+font-size: 25px;
+}
+
+p {
+line-height: 2;
+font-size: 17px;
+}
+
+.english {
+direction: ltr;
+letter-spacing: 1px;
+}
+
+.ornament {
+color: #a56bce;
+margin: 24px 0;
+letter-spacing: 5px;
+}
+
+button {
+display: inline-block;
+width: 100%;
+max-width: 310px;
+margin: 10px auto;
+padding: 14px 18px;
+border: 1px solid #bd8be1;
+background: linear-gradient(135deg, #351447, #6e298c);
+color: #fff0ff;
+font-size: 16px;
+font-family: inherit;
+cursor: pointer;
+transition: .25s;
+}
+
+button:hover {
+background: linear-gradient(135deg, #58216f, #9145b8);
+box-shadow: 0 0 18px #a747db70;
+transform: translateY(-2px);
+}
+
+input {
+display: block;
+width: 100%;
+max-width: 230px;
+margin: 20px auto;
+padding: 14px;
+border: 1px solid #9d68c1;
+background: #110819;
+color: white;
+text-align: center;
+font-size: 22px;
+outline: none;
+}
+
+input:focus {
+box-shadow: 0 0 15px #a747db70;
+}
+
+.screen {
+display: none;
+animation: appear .8s ease;
+}
+
+.screen.active {
+display: block;
+}
+
+.result {
+min-height: 75px;
+padding: 18px 10px;
+color: #f0d5ff;
+font-size: 23px;
+line-height: 1.9;
+overflow-wrap: anywhere;
+}
+
+.note {
+font-size: 13px;
+color: #b9a1c8;
+}
+
+.bat {
+position: fixed;
+bottom: -40px;
+z-index: 2;
+pointer-events: none;
+animation: rise 8s linear forwards;
+opacity: .7;
+}
+
+@keyframes appear {
+from { opacity: 0; transform: translateY(12px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+to {
+transform: translateY(-110vh) rotate(25deg);
+opacity: 0;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: .01ms !important;
+transition-duration: .01ms !important;
+}
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+<section id="intro" class="screen active">
+<div class="symbol">♱ ☾ ♱</div>
+
+<p class="english">A DARK LITTLE LOVE STORY</p>
+
+<h1>I love my zombie macs girl</h1>
+
+<div class="ornament">━━━━━━ ♡ ━━━━━━</div>
+
+<p style="font-size:23px;">
+احبج رحمة صاكة ⠀  ⠀ ⠀♱ ⠀
+</p>
+
+<p>
+for my sexy zombie I never seen .. 
+<br>
+هذه الأغنية إلج وحدج...
+</p>
+
+<div class="symbol">🦇༉‧₊˚.</div>
+
+<button type="button" id="playButton">
+♫ شغّلي أغنيتنا يا زومبيتي
+</button>
+
+<p class="note">
+شغّلي الأغنية، وبعدها تعالي جاوبي على سؤالي...
+</p>
+
+<audio id="song" loop preload="none">
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button type="button" id="nextButton">
+انتقلي للسؤال ♡
+</button>
+</section>
+
+<section id="question" class="screen">
+<div class="symbol">🖤 ♱ 🖤</div>
+
+<p class="english">TELL ME, MY ZOMBIE GIRL...</p>
+
+<h1>كم تحبيني؟</h1>
+
+<div class="ornament">‿̩͙⊱༒︎༻♱༺༒︎⊰‿̩͙</div>
+
+<p>
+جاوبيني برقَم، يِرحمة...
+<br>
+</p>
+
+<label for="loveNumber">كم مقدار حبج إلي؟ 💜</label>
+
+<input
+id="loveNumber"
+type="number"
+min="0"
+step="any"
+placeholder="اكتَبي الرقم هنا"
+>
+
+<button type="button" id="answerButton">
+اكشفي مصيري 🖤
+</button>
+
+<div id="result" class="result" aria-live="polite"></div>
+
+<div class="ornament">━━━━━━ ♡ ━━━━━━</div>
+
+<p class="english note">FOREVER YOURS, MY ZOMBIE GIRL.</p>
+</section>
+
+</main>
+
+<script>
+const intro = document.getElementById("intro");
+const question = document.getElementById("question");
+const song = document.getElementById("song");
+const playButton = document.getElementById("playButton");
+const nextButton = document.getElementById("nextButton");
+const loveNumber = document.getElementById("loveNumber");
+const result = document.getElementById("result");
+
+playButton.addEventListener("click", async function () {
+try {
+await song.play();
+playButton.textContent = "Won't u die tonight for love?";
+} catch (error) {
+playButton.textContent = " song.mp3";
+}
+});
+
+nextButton.addEventListener("click", function () {
+intro.classList.remove("active");
+question.classList.add("active");
+});
+
+document.getElementById("answerButton").addEventListener("click", function () {
+const value = loveNumber.value.trim();
+
+if (value === "" || !Number.isFinite(Number(value))) {
+result.textContent = "اكتبي رقم ";
+return;
+}
+
+const amount = Number(value);
+
+if (amount < 5) {
+result.textContent = "أيا گحبة 😭🦇";
+} else {
+result.textContent = "أموت عليج بيبي 🖤";
+}
+
+for (let i = 0; i < 12; i++) {
+setTimeout(createBat, i * 120);
+}
+});
+
+function createBat() {
+const bat = document.createElement("span");
+bat.className = "bat";
+bat.textContent = ["🦇", "♡", "💜", "♱"][Math.floor(Math.random() * 4)];
+
+bat.style.left = Math.random() * 100 + "vw";
+bat.style.fontSize = (16 + Math.random() * 18) + "px";
+
+document.body.appendChild(bat);
+
+setTimeout(function () {
+bat.remove();
+}, 8000);
+}
+</script>
+
+</body>
+</html>
+  
